@@ -1,23 +1,43 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeUser, setEditingUser } from "../Redux/userSlice";
+import { removeUser, setEditingUser, searchUser } from "../Redux/userSlice";
 
 function UserTable() {
   const users = useSelector((state) => state.users.users);
+  const searchQuery = useSelector((state) => state.users.searchQuery);
 
   const dispatch = useDispatch();
 
   const handleRemoveUser = (id) => {
+    console.log("handleRemoveUser clicked with ID:", id);
     dispatch(removeUser(id));
   };
 
   const handleUpdateUser = (user) => {
+    console.log("handleUpdateUser clicked with user:", user);
     dispatch(setEditingUser(user));
   };
+
+  const handleSearch = (e) => {
+    dispatch(searchUser(e.target.value));
+  };
+
+  const filteredUsers = users.filter((user) =>
+    user.nom.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="container mt-4">
       <h1 className="mb-4">Utilisateurs</h1>
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Rechercher un utilisateur..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+      </div>
       <table className="table table-striped">
         <thead className="table-dark">
           <tr>
@@ -28,7 +48,7 @@ function UserTable() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {filteredUsers.map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.nom}</td>
