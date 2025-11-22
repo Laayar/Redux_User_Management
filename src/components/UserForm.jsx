@@ -1,20 +1,37 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addUser } from "../Redux/userSlice";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, updateUser, setEditingUser } from "../Redux/userSlice";
 
 function UserForm() {
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
-
+  
   const dispatch = useDispatch();
+  const editingUser = useSelector((state) => state.users.editingUser);
+
+  useEffect(() => {
+    if (editingUser) {
+      setNom(editingUser.nom);
+      setEmail(editingUser.email);
+    } else {
+      setNom("");
+      setEmail("");
+    }
+  }, [editingUser]);
 
   const handleClick = () => {
     if (nom.trim().length < 3 || !email.includes("@")) {
       alert("Verifier!!!!");
       return;
     }
+    
+    if (editingUser) {
+      dispatch(updateUser({ id: editingUser.id, nom, email }));
+      dispatch(setEditingUser(null));
+    } else {
+      dispatch(addUser({ nom, email }));
+    }
 
-    dispatch(addUser({ nom, email }));
     setNom("");
     setEmail("");
   };
@@ -42,7 +59,7 @@ function UserForm() {
         </div>
         <div className="col-12">
           <button className="btn btn-primary" onClick={handleClick}>
-            Ajouter
+            {editingUser ? "Update" : "Ajouter"}
           </button>
         </div>
       </div>

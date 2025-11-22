@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeUser } from "../Redux/userSlice";
+import { removeUser, setEditingUser } from "../Redux/userSlice";
 
 function UserTable() {
   const users = useSelector((state) => state.users.users);
@@ -9,6 +9,10 @@ function UserTable() {
 
   const handleRemoveUser = (id) => {
     dispatch(removeUser(id));
+  };
+
+  const handleUpdateUser = (user) => {
+    dispatch(setEditingUser(user));
   };
 
   return (
@@ -30,12 +34,8 @@ function UserTable() {
               <td>{user.nom}</td>
               <td>{user.email}</td>
               <td>
-                <button
-                  onClick={() => handleRemoveUser(user.id)}
-                  className="btn btn-danger btn-sm"
-                >
-                  Supprimer
-                </button>
+                <button onClick={() => handleRemoveUser(user.id)} className="btn btn-danger btn-sm">Supprimer</button>
+                <button onClick={() => handleUpdateUser(user)} className="btn btn-success btn-sm ms-2">Update</button>
               </td>
             </tr>
           ))}
