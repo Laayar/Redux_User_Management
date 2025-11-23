@@ -1,16 +1,28 @@
-# React + Vite
+React + Redux Toolkit User Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight user-management app built with React, Redux Toolkit, and Vite.
+The app lets you create, read, update, and delete users, with all data stored in localStorage.
 
-Currently, two official plugins are available:
+✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add Users: Two inputs (Full Name + Email) stored instantly.
 
-## React Compiler
+Display Table: All users appear in a clean, paginated table.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Edit & Delete: Update or remove any user with simple buttons.
 
-## Expanding the ESLint configuration
+Search Bar: Filter users in real time by name or email.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+LocalStorage Persistence: Your data survives reloads.
+
+🛠️ Tech Stack
+
+React
+
+Redux Toolkit
+
+Vite
+
+LocalStorage API
+
+This project is a great starter example to learn how Redux Toolkit handles state slices, actions, reducers, and integration inside a small UI.
