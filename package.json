@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://laayar.github.io/My-React-Vite-App/",
+  "homepage": "https://laayar.github.io/Redux_User_Management/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

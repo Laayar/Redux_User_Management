@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/My-React-Vite-App/", // Exact repo name
+  base: "/Redux_User_Management/", // Exact repo name
 })
