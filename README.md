@@ -5,7 +5,7 @@ The app lets you create, read, update, and delete users, with all data stored in
 
 🔗 **[Live Demo](https://laayar.github.io/Redux_User_Management/)**
 
-## ✨ Features
+##  Features
 
 - **Add Users**: Two inputs (Full Name + Email) stored instantly.
 - **Display Table**: All users appear in a clean, paginated table.
@@ -13,7 +13,7 @@ The app lets you create, read, update, and delete users, with all data stored in
 - **Search Bar**: Filter users in real time by name or email.
 - **LocalStorage Persistence**: Your data survives reloads.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Frontend Library:** React
 * **State Management:** Redux Toolkit (Slices, Actions, Reducers)
