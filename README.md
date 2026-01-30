@@ -3,7 +3,7 @@
 A lightweight user-management app built with React, Redux Toolkit, and Vite.  
 The app lets you create, read, update, and delete users, with all data stored in localStorage.
 
-🔗 **Live Demo**: [https://laayar.github.io/My-React-Vite-App/](https://laayar.github.io/My-React-Vite-App/)
+🔗 **[Live Demo](https://laayar.github.io/Redux_User_Management/)**
 
 ## ✨ Features
 
@@ -15,9 +15,14 @@ The app lets you create, read, update, and delete users, with all data stored in
 
 ## 🛠️ Tech Stack
 
-- React
-- Redux Toolkit
-- Vite
-- LocalStorage API
+* **Frontend Library:** React
+* **State Management:** Redux Toolkit (Slices, Actions, Reducers)
+* **Build Tool:** Vite
+* **Persistence:** LocalStorage API
+* **Styling:** Modern CSS / Responsive Table UI
+
+## Screenshot
+
+![Project Screenshot](User_Managment.png)
 
 This project is a great starter example to learn how Redux Toolkit handles state slices, actions, reducers, and integration inside a small UI.
