@@ -6,7 +6,8 @@ const loadUsersFromStorage = () => {
         if (serializedState === null) {
             return [];
         }
-        return JSON.parse(serializedState);
+        const parsedState = JSON.parse(serializedState);
+        return Array.isArray(parsedState) ? parsedState : [];
     } catch (err) {
         return [];
     }
@@ -36,7 +37,7 @@ const userSlice = createSlice({
         addUser: (state, action) => {
             const { nom, email } = action.payload;
             const newUser = {
-                id: state.users.length + 1,
+                id: Date.now(),
                 nom,
                 email,
             };

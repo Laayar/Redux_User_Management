@@ -25,7 +25,7 @@ function UserTable() {
   };
 
   const filteredUsers = users.filter((user) =>
-    user.nom.toLowerCase().includes(searchQuery.toLowerCase())
+    user.nom?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const indexOfLastItem = currentPage * itemsPerPage;
